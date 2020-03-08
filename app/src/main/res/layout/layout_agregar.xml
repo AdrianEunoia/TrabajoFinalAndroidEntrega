@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp"
+    android:layout_gravity="center"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Agregar título"
+            android:textSize="40sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:padding="10sp">
+        <EditText
+            android:id="@+id/editnombretitulo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:hint="Introduce el nombre"
+            android:drawableLeft="@android:drawable/ic_input_add">
+        </EditText>
+        <EditText
+            android:id="@+id/editautortitulo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:hint="Introduce el autor"
+            android:drawableLeft="@android:drawable/ic_input_add">
+        </EditText>
+        <EditText
+            android:id="@+id/editlanzamientotitulo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:hint="Introduce la fecha de lanzamiento"
+            android:drawableLeft="@android:drawable/ic_input_add">
+        </EditText>
+        <EditText
+            android:id="@+id/editpreciotitulo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:hint="Introduce el precio"
+            android:drawableLeft="@android:drawable/ic_dialog_info">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar título"
+            android:textSize="12sp"
+            android:background="@color/colorAccent"
+            android:layout_gravity="center"
+            android:padding="20sp">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

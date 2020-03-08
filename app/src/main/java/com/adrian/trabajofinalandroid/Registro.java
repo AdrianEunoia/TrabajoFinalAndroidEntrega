@@ -48,7 +48,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.idButtonRegistrar:
-                if (editUsuario.equals("") || editPasswordUno.equals("") || editPasswordDos.equals("")){
+                if (editUsuario.getText().toString().length()==0 || editPasswordUno.getText().toString().length()==0 || editPasswordDos.getText().toString().length()==0 ){
                     Toast.makeText(this, "Todos los datos deben de estar completos.", Toast.LENGTH_LONG).show();
                 }
                 else if(editPasswordUno.getText().toString().equals(editPasswordDos.getText().toString())){
@@ -59,7 +59,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     if(usuarioExistente==true){
                         Boolean insertarUsuario = databaseHelper.insertarUsuarios(usuarioRegistro,passwordRegistro);
                         if(insertarUsuario==true){
-                            Toast.makeText(this, "Usuario insertado con existo!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "Usuario insertado con exito!", Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(this, "Ha ocurrido un problema con la BASE DE DATOS!", Toast.LENGTH_LONG).show();
                         }
                     }else{
                         Toast.makeText(this, "Ya hay un usuario registrado con ese nombre, lo sentimos.", Toast.LENGTH_LONG).show();
@@ -70,6 +72,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.idButtonVaciar:
                 System.out.println("Vaciando campos");
+                editUsuario.setText("");
+                editPasswordUno.setText("");
+                editPasswordDos.setText("asd");
                 break;
             case R.id.idtextLogin:
                 System.out.println("Accediendo a login");
