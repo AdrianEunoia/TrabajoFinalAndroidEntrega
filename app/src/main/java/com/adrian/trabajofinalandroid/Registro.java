@@ -17,6 +17,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     EditText editUsuario, editPasswordUno, editPasswordDos;
     Button buttonRegistro, buttonVaciar;
     TextView idviewlogin;
+
     // Base de datos
     DatabaseHelper databaseHelper;
     @Override
@@ -74,7 +75,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                 System.out.println("Vaciando campos");
                 editUsuario.setText("");
                 editPasswordUno.setText("");
-                editPasswordDos.setText("asd");
+                editPasswordDos.setText("");
                 break;
             case R.id.idtextLogin:
                 System.out.println("Accediendo a login");

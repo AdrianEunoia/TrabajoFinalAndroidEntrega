@@ -49,6 +49,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     System.out.println("Logeando en la APP");
                     String nombreLogin = editUsuario.getText().toString();
                     String passwordLogin = editPasswordUno.getText().toString();
+                    // Metodo
                     boolean comprobarLogin = databaseHelper.comprobarLogin(nombreLogin,passwordLogin);
                     if(comprobarLogin==true){
                         System.out.println("Login correcto");

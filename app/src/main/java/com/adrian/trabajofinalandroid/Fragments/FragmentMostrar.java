@@ -33,10 +33,20 @@ public class FragmentMostrar extends Fragment {
         args.putString("Plataforma",nombrePlataforma);
         FragmentAgregar fragment = new FragmentAgregar();
         fragment.setArguments(args);
+        actualizar();
         return fragment;
     }
 
+    private static void actualizar() {
+        System.out.println("Elegido");
+    }
+
     public FragmentMostrar() {
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -49,7 +59,7 @@ public class FragmentMostrar extends Fragment {
         while (cursor.moveToNext()){
             listaTitulos.add(new Titulos(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3)));
         }
-        adaptadorRecycler = new AdaptadorRecycler(context, listaTitulos);
+        adaptadorRecycler = new AdaptadorRecycler(getContext(), listaTitulos);
         adaptadorRecycler.notifyDataSetChanged();
     }
 
@@ -65,7 +75,6 @@ public class FragmentMostrar extends Fragment {
         View view = inflater.inflate(R.layout.layout_mostrar,container,false);
         recyclerMostrar = view.findViewById(R.id.idRecyclerMostrar);
         recyclerMostrar.setLayoutManager(new GridLayoutManager(getContext(),1, RecyclerView.VERTICAL, false));
-
         return view;
     }
 }

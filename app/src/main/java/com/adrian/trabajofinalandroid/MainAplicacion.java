@@ -56,16 +56,10 @@ public class MainAplicacion extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
-
             @Override
             public void onPageSelected(int position) {
                 Log.v("scroll",String.valueOf(position));
                 Fragment fragment = adaptadorFragments.getItem(position);
-                //Drawable drawable = fragment.getView().findViewById(R.id.fondo).getBackground();
-                //tabLayout.setBackground(drawable);
-                //TabLayout.Tab seleccionada = tabLayout.getTabAt(position);
-                //seleccionada.view.setBackground(drawable);
-
             }
 
             @Override

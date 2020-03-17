@@ -10,25 +10,34 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    // Metodo para almacenar la base de datos
     public DatabaseHelper(@Nullable Context context) {
         super(context, "bd.db",null,1);
     }
 
+    // Metodo para crear las tablas de la base de datos
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Crea la tabla de los usuarios
         db.execSQL("Create table users(nombreuser text primary key,passworduser text)");
+        // Crea la tabla de los titulos
         db.execSQL("Create table titulos(titulo text primary key,autor text,lanzamiento text,precio text)");
     }
 
+    // Metodo por defecto
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Para tabla de usuarios
         db.execSQL("drop table if exists users");
+        // Para la tabla de titulos
         db.execSQL("drop table if exists titulos");
     }
 
     // Metodo para insertar usuarios
     public boolean insertarUsuarios(String nombreUsuario, String passwordUsuario){
+        // Sentencia por defecto, estará siempre
         SQLiteDatabase db = this.getWritableDatabase();
+        // Content values contendrá los datos del insert
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombreuser",nombreUsuario);
         contentValues.put("passworduser",passwordUsuario);
